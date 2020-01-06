@@ -1,4 +1,4 @@
-module.exports = `0::1577819223100::R::first
+export default `0::1577819223100::R::first
 1::1577819224757::R::esotrakt
 4::1577919854165::S::1
 5::1577920001924::R::hello kitty

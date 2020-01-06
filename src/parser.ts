@@ -5,7 +5,7 @@ import { Node } from "./models/Node";
 
 function resolveNode(target: Operation, ops: Array<Operation>): Node {
   const modifiers = ops.filter(
-    op => op.m1 === target.id || op.m2 === target.id
+    op => op.m1 === target.id
   );
   return modifiers.length === 0
     ? { operation: target, modifiers: [] }
@@ -15,8 +15,7 @@ function resolveNode(target: Operation, ops: Array<Operation>): Node {
       };
 }
 
-export function parse(contents: string): Array<Node> {
-  const tokens = tokenize(contents);
+export function parse(tokens: Operation[]): Array<Node> {
   const refs = tokens.filter(({ operator }) =>
     operators[operatorKeys.ref].includes(operator)
   );
