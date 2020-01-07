@@ -13,7 +13,8 @@ export const linkRef: IOperatorEvaluator = (target, source, operations) => {
       op =>
         source.operation.m2 !== source.operation.id &&
         op.id === source.operation.m2
-    );
+    )
+    .map(op => op.m1);
 
   if (target.tags === undefined) target.tags = tags;
   else target.tags.push(...tags);

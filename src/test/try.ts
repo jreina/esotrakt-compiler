@@ -6,4 +6,3 @@ const tree = compile(data);
 fs.writeFileSync("blah.json", JSON.stringify(tree), {
   encoding: "utf8"
 });
-console.log(tree);
