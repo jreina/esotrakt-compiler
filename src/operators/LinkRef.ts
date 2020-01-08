@@ -15,7 +15,7 @@ export const linkRef: IOperatorEvaluator = (target, source, operations) => {
         op.id === source.operation.m2
     )
     .map(op => op.m1)
-    .concat(target.tags ? target.tags: [])
+    .concat(target.tags ? target.tags : [])
     .uniq()
     .value();
 

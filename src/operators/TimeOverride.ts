@@ -25,10 +25,9 @@ export const timeOverride: IOperatorEvaluator = (
     parent.operation.operator
   );
   const isEnd = operators[operatorKeys.end].includes(parent.operation.operator);
-  const value = moment(source.operation.m2, [
-    "MM/DD/YYYY HH:mm",
-    "MM/DD/YYYY"
-  ]).utc().toISOString();
+  const value = moment(source.operation.m2, ["MM/DD/YYYY HH:mm", "MM/DD/YYYY"])
+    .utc()
+    .toISOString();
   if (isInstance) target.time = value;
   else if (isEnd) target.end = value;
   else if (isStart) target.start = value;

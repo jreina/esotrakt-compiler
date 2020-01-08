@@ -28,9 +28,11 @@ export function parse(tokens: Operation[]): Array<Node> {
     .map(refNode => {
       const tagOperations = refNode.modifiers.filter(isTagOperation);
       if (tagOperations.length > 0) {
-        refNode.modifiers.filter(node => !isTagOperation(node)).forEach(modifier => {
-          modifier.modifiers.push(...tagOperations);
-        });
+        refNode.modifiers
+          .filter(node => !isTagOperation(node))
+          .forEach(modifier => {
+            modifier.modifiers.push(...tagOperations);
+          });
       }
       return refNode;
     });
