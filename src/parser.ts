@@ -1,4 +1,3 @@
-import { tokenize } from "./tokenize";
 import { operators, operatorKeys } from "./tokens";
 import { Operation } from "./models/Operation";
 import { Node } from "./models/Node";
