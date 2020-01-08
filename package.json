@@ -32,5 +32,8 @@
   },
   "keywords": [],
   "author": "Johnny Reina",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist"
+  ]
 }
