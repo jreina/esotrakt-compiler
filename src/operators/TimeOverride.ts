@@ -19,16 +19,16 @@ export const timeOverride: IOperatorEvaluator = (
       "Missing second operand of binary operator."
     );
   const isInstance = operators[operatorKeys.instance].includes(
-    source.operation.operator
+    parent.operation.operator
   );
   const isStart = operators[operatorKeys.start].includes(
-    source.operation.operator
+    parent.operation.operator
   );
-  const isEnd = operators[operatorKeys.end].includes(source.operation.operator);
+  const isEnd = operators[operatorKeys.end].includes(parent.operation.operator);
   const value = moment(source.operation.m2, [
     "MM/DD/YYYY HH:mm",
     "MM/DD/YYYY"
-  ]).utc();
+  ]).utc().toISOString();
   if (isInstance) target.time = value;
   else if (isEnd) target.end = value;
   else if (isStart) target.start = value;
