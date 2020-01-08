@@ -1,5 +1,5 @@
 import { Operation } from "./models/Operation";
-import moment from 'moment';
+import moment from "moment";
 
 export function tokenize(contents: string): Array<Operation> {
   return contents
